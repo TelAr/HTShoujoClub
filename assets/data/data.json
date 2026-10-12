@@ -1,0 +1,229 @@
+{
+  "site": {
+    "name": "반동소녀구락부",
+    "nameJa": "返東少女倶楽部",
+    "nameEn": "Half-Touhou Club",
+    "tagline": "절반 이상이 동방곡! 동방 중심의 애니송클럽 이벤트",
+    "description": "반동소녀구락부(Half-Touhou Club)는 전체 곡의 50% 이상을 동방 프로젝트 음악으로 채우는 DJ 클럽 이벤트입니다. '반(이) 동(방)'이라는 이름처럼, 동방 어레인지를 중심으로 다양한 음악들을 함께 즐기는 자리를 만들고 있습니다.",
+    "contact": {
+      "email": "airdef306@naver.com",
+      "links": [
+        { "label": "X (Twitter)", "url": "https://x.com/HalfToho_Club" }
+      ]
+    }
+  },
+
+  "events": [
+    {
+      "id": "revenge",
+      "vol": 3.5,
+      "label": "REVENGE",
+      "title": "반동소녀구락부 REVENGE",
+      "subtitle": "그 때의 그 이야기, REVENGE가 시작됩니다",
+      "date": "2026-05-09",
+      "open": "17:00",
+      "close": "21:30",
+      "venue": {
+        "name": "H.Ai",
+        "address": "서울 중구 을지로 146-1 5F",
+        "mapUrl": "https://map.naver.com/p/search/%EC%9D%84%EC%A7%80%EB%A1%9C%20146-1"
+      },
+      "ticket": {
+        "price": "사전예매 15,000원 / 현장 20,000원",
+        "url": null
+      },
+      "poster": null,
+      "description": "그 때의 그 이야기, REVENGE가 시작됩니다! 반동소녀구락부의 3.5번째 이야기.",
+      "lineup": [
+        { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
+        { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
+        { "role": "DJ", "name": "Meta", "x": "_meta_P", "time": null, "note": null },
+        { "role": "DJ", "name": "阿野", "x": "anoch4n", "time": null, "note": null },
+        { "role": "DJ", "name": "Palami", "x": "PalamiOfficial", "time": null, "note": null },
+        { "role": "DJ", "name": "KINGRALNAS", "x": "kin_g_ral", "time": null, "note": null },
+        { "role": "VJ", "name": "cravasity", "x": "cravasity1", "time": null, "note": null },
+        { "role": "VJ", "name": "TVnonaka", "x": "_tankpark_", "time": null, "note": null }
+      ],
+      "credits": [
+        { "role": "Organizer", "people": [
+          { "name": "Airdefence", "x": "airdefencestand" },
+          { "name": "TeAr", "x": "ErTe57661689" }
+        ] }
+      ],
+      "links": [
+        { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/2040764005510467722" },
+        { "label": "수정 포스터", "url": "https://x.com/HalfToho_Club/status/2040952165590855874" }
+      ]
+    },
+    {
+      "id": "vol-03",
+      "vol": 3,
+      "title": "반동소녀구락부 Vol.3",
+      "subtitle": "다시 돌아온 반동소녀구락부, 세 번째 이야기",
+      "date": "2026-03-28",
+      "open": "12:00",
+      "close": null,
+      "venue": {
+        "name": "홍턴",
+        "address": "서울 마포구 동교로 207 B1/B2",
+        "mapUrl": "https://map.naver.com/p/search/%ED%99%8D%ED%84%B4"
+      },
+      "ticket": {
+        "price": "사전예매 27,000원 / 현장 32,000원",
+        "url": null
+      },
+      "poster": null,
+      "description": "다시 돌아온 반동소녀구락부, 세 번째 이야기! 이번에는 조금 더 진하게 즐겨 볼까요? 주류 반입이 자유로운 행사로, 미성년자는 참여할 수 없는 성인 전용(ADULT ONLY) 행사로 진행되었습니다.",
+      "lineup": [
+        { "role": "DJ", "name": "SANY-ON", "x": "sany_on_", "time": null, "note": null },
+        { "role": "DJ", "name": "Buffshut", "x": null, "time": null, "note": null },
+        { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
+        { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
+        { "role": "DJ", "name": "채챙", "x": "CC_Otaku", "time": null, "note": null },
+        { "role": "DJ", "name": "阿野", "x": "anoch4n", "time": null, "note": null },
+        { "role": "DJ", "name": "Nimvy", "x": null, "time": null, "note": null },
+        { "role": "VJ", "name": "Himin", "x": "hikawa_mint", "time": null, "note": null },
+        { "role": "VJ", "name": "Meta", "x": "_meta_P", "time": null, "note": null },
+        { "role": "VJ", "name": "Amai_Keshiki", "x": "DPK0314", "time": null, "note": null }
+      ],
+      "credits": [
+        { "role": "Organizer", "people": [
+          { "name": "Airdefence", "x": "airdefencestand" },
+          { "name": "TeAr", "x": "ErTe57661689" }
+        ] }
+      ],
+      "links": [
+        { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/2022605306895994986" }
+      ]
+    },
+    {
+      "id": "vol-02",
+      "vol": 2,
+      "title": "반동소녀구락부 Vol.2",
+      "subtitle": "다시 돌아온 반(이)동(방) DJ클럽 이벤트",
+      "date": "2025-05-31",
+      "open": "12:30",
+      "close": "20:30",
+      "venue": {
+        "name": "아로아로홀",
+        "address": "서울 마포구 월드컵로 41-1 지하 1층",
+        "mapUrl": "https://map.naver.com/p/search/%EC%95%84%EB%A1%9C%EC%95%84%EB%A1%9C%ED%99%80"
+      },
+      "ticket": {
+        "price": "사전예매 30,000원 / 현장 35,000원 (현장에서 동방 굿즈 실물 인증 시 3,000원 할인)",
+        "url": "https://forms.gle/Kk9ZGmE1eRt7oddh7",
+        "openAt": "2025-04-05T11:00",
+        "closeAt": "2025-05-25T23:59"
+      },
+      "poster": null,
+      "description": "다시 돌아온 반(이)동(방) DJ클럽 이벤트! 사전예매자는 함께 즐기고 싶은 곡을 신청할 수 있었고, 사전예매를 놓친 분들을 위해 동방 프로젝트 굿즈를 지참하면 현장 예매가를 할인해 주는 이벤트도 진행했습니다. 발권은 행사 종료 직전 마감되었습니다.",
+      "lineup": [
+        { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
+        { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
+        { "role": "DJ", "name": "MSPR", "x": "Mush_party_room", "time": null, "note": null },
+        { "role": "DJ", "name": "Rabbit House", "x": "ri_neb", "time": null, "note": null },
+        { "role": "DJ", "name": "RiraN", "x": "riranofficial", "time": null, "note": null },
+        { "role": "DJ", "name": "SANY-ON", "x": "sany_on_", "time": null, "note": null },
+        { "role": "DJ", "name": "Ba7Cat", "x": null, "time": null, "note": null },
+        { "role": "DJ", "name": "Meta", "x": "_meta_P", "time": null, "note": null },
+        { "role": "DJ", "name": "PiEa", "x": "Earbreaker_SC", "time": null, "note": null },
+        { "role": "DJ", "name": "Red_Villon", "x": "Red_Villon", "time": null, "note": null },
+        { "role": "VJ", "name": "N0mel0", "x": "N0mel0", "time": null, "note": null },
+        { "role": "VJ", "name": "KDM", "x": "KDM_Hibiki", "time": null, "note": null },
+        { "role": "VJ", "name": "Amai Keshiki", "x": "DPK0314", "time": null, "note": null },
+        { "role": "VJ", "name": "Himin", "x": "hikawa_mint", "time": null, "note": null }
+      ],
+      "credits": [
+        { "role": "Organizer", "people": [
+          { "name": "Airdefence", "x": "airdefencestand" }
+        ] },
+        { "role": "Special", "people": [{ "name": "환상향 크리에이터즈", "x": null }] }
+      ],
+      "links": [
+        { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/1888841930936836553" },
+        { "label": "티켓 오픈", "url": "https://x.com/HalfToho_Club/status/1908340848951230571" },
+        { "label": "굿즈 할인 이벤트", "url": "https://x.com/HalfToho_Club/status/1927663436839723058" },
+        { "label": "DJ/VJ 소개", "url": "https://x.com/HalfToho_Club/status/1928245379880845709" },
+        { "label": "행사 종료", "url": "https://x.com/HalfToho_Club/status/1928783572288090318" }
+      ]
+    },
+    {
+      "id": "mini-01",
+      "vol": null,
+      "title": "반동소녀구락부 mini",
+      "subtitle": "in 온 동네가 환상향",
+      "date": "2024-10-12",
+      "open": "14:00",
+      "close": "16:00",
+      "venue": {
+        "name": "기타&노래터",
+        "address": "용인시 수지구 문인로31번길 3-23 지하1층",
+        "mapUrl": "https://map.naver.com/p/search/%EA%B8%B0%ED%83%80%26%EB%85%B8%EB%9E%98%ED%84%B0"
+      },
+      "ticket": null,
+      "poster": null,
+      "description": "동방 프로젝트 행사 '온 동네가 환상향(@OnDongHwan)'에서 진행한 가벼운 DJ 이벤트입니다.",
+      "lineup": [],
+      "credits": [
+        { "role": "Organizer", "people": [
+          { "name": "Airdefence", "x": "airdefencestand" }
+        ] }
+      ],
+      "links": [
+        { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/1835227436222759125" },
+        { "label": "온 동네가 환상향", "url": "https://x.com/OnDongHwan" }
+      ]
+    },
+    {
+      "id": "vol-01",
+      "vol": 1,
+      "title": "반동소녀구락부 Vol.1",
+      "subtitle": "Half-Touhou DJ Event",
+      "date": "2024-07-27",
+      "open": "14:30",
+      "close": "21:00",
+      "venue": {
+        "name": "아로아로홀",
+        "address": "서울 마포구 월드컵로 41-1 지하 1층",
+        "mapUrl": "https://map.naver.com/p/search/%EC%95%84%EB%A1%9C%EC%95%84%EB%A1%9C%ED%99%80"
+      },
+      "ticket": {
+        "price": "사전예매 22,000원 / 현장 25,000원",
+        "url": "https://forms.gle/H2FXJo4Pzm8JUkEr6",
+        "openAt": "2024-06-22T19:00",
+        "closeAt": "2024-07-22T21:00"
+      },
+      "poster": null,
+      "description": "전체 곡의 50% 이상이 동방 음악인 DJ 클럽 이벤트, 반동소녀구락부의 첫 번째 밤. 아니쿠라 여름방학 스탬프 이벤트에도 참여했으며, 모든 순서가 사고 없이 마무리되었습니다.",
+      "lineup": [
+        { "role": "DVJ", "name": "K.Y.N.G", "x": "SORYU_KOYANAGI", "time": null, "note": "원격 진행" },
+        { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
+        { "role": "DJ", "name": "Rabbit House", "x": "ri_neb", "time": null, "note": null },
+        { "role": "DJ", "name": "PiEa", "x": "Earbreaker_SC", "time": null, "note": null },
+        { "role": "DJ", "name": "적발추", "x": "Red_Villon", "time": null, "note": null },
+        { "role": "DJ", "name": "SANY_ON", "x": "sany_on_", "time": null, "note": null },
+        { "role": "DJ", "name": "MSPR", "x": "Mush_party_room", "time": null, "note": null },
+        { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
+        { "role": "VJ", "name": "단풍경", "x": "DPK0314", "time": null, "note": null },
+        { "role": "VJ", "name": "Himin", "x": "hikawa_mint", "time": null, "note": null },
+        { "role": "VJ", "name": "Tsuru", "x": "mentsuru_", "time": null, "note": null }
+      ],
+      "credits": [
+        { "role": "Organizer", "people": [
+          { "name": "Airdefence", "x": "airdefencestand" },
+          { "name": "산천어", "x": "mt1000fish" }
+        ] },
+        { "role": "Photo", "people": [{ "name": "DigginGoose", "x": "HuxRack" }] },
+        { "role": "Design", "people": [{ "name": "K.Y.N.G", "x": "SORYU_KOYANAGI" }] },
+        { "role": "Illust", "people": [{ "name": "@recare1125", "x": "recare1125" }] }
+      ],
+      "links": [
+        { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/1789581621601177679" },
+        { "label": "라인업 공개", "url": "https://x.com/HalfToho_Club/status/1789840127788802276" },
+        { "label": "사전예매 오픈", "url": "https://x.com/HalfToho_Club/status/1804467235597283456" },
+        { "label": "타임테이블", "url": "https://x.com/HalfToho_Club/status/1817064469769674756" },
+        { "label": "행사 종료", "url": "https://x.com/HalfToho_Club/status/1817211608986443956" }
+      ]
+    }
+  ]
+}
