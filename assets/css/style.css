@@ -316,3 +316,18 @@ body.nav-open { overflow: hidden; }
 .btn--disabled, .btn--disabled:hover {
   cursor: not-allowed; background: var(--paper); color: var(--muted); border-color: var(--line);
 }
+
+/* ---------- 실제 포스터 이미지 ----------
+ * 포스터마다 비율이 달라(세로/정사각/가로) 상세·메인에서는 원본 비율 그대로,
+ * 카드 썸네일에서는 상단 기준으로 잘라서 표시 */
+img.poster { aspect-ratio: auto; height: auto; background: var(--black); }
+img.poster--card { aspect-ratio: 16 / 10; height: auto; object-fit: cover; object-position: top; }
+.detail__poster a { display: block; max-width: 420px; margin: 0 auto; }
+.detail__poster a .poster { transition: transform .2s; }
+.detail__poster a:hover .poster { transform: translate(-2px, -2px); }
+
+/* ---------- 연락처 ---------- */
+.contact-list dt { white-space: nowrap; display: flex; align-items: center; }
+.icon { width: 1.1em; height: 1.1em; fill: currentColor; flex: none; }
+.site-footer__links a { display: inline-flex; align-items: center; min-height: 32px; }
+.site-footer__links .icon { width: 1.25em; height: 1.25em; }

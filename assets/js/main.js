@@ -71,8 +71,19 @@
     return event.vol != null ? `Vol.${event.vol}` : "mini";
   }
 
-  function nightLabel(event) {
-    return event.vol != null ? `第${event.vol}夜` : "番外";
+  function actLabel(event) {
+    return event.vol != null ? `第${event.vol}幕` : "幕間";
+  }
+
+  // 연락처 링크 아이콘 (data.json의 links[].icon 값)
+  const ICONS = {
+    x: '<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>',
+  };
+
+  function linkLabel(link) {
+    const icon = ICONS[link.icon];
+    if (!icon) return esc(link.label);
+    return `<svg class="icon" viewBox="0 0 24 24" role="img" aria-label="${esc(link.label)}"><title>${esc(link.label)}</title>${icon}</svg>`;
   }
 
   function xLink(handle, text) {
@@ -95,7 +106,7 @@
       ? `<span class="badge badge--live">예정</span>`
       : `<span class="badge">종료</span>`;
     return `<a class="ofuda-card" href="event.html?id=${encodeURIComponent(event.id)}">
-      <span class="ofuda-card__strip" aria-hidden="true">${nightLabel(event)}</span>
+      <span class="ofuda-card__strip" aria-hidden="true">${actLabel(event)}</span>
       <div class="ofuda-card__body">
         ${poster(event, "poster--card")}
         <div class="ofuda-card__meta">
@@ -261,9 +272,9 @@
         <p class="muted">${esc(SITE.contact.email)}</p>
       </div>
       <ul class="site-footer__links">
-        ${SITE.contact.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`).join("")}
+        ${SITE.contact.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${linkLabel(l)}</a></li>`).join("")}
       </ul>
-      <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(SITE.name)}. 본 행사는 동방 프로젝트의 비공식 팬 이벤트입니다.</p>
+      <p class="site-footer__copy">© ${new Date().getFullYear()} ${esc(SITE.name)}. 본 행사는 동방 프로젝트의 비공식 DJ 이벤트입니다.</p>
     </div>`;
   }
 
@@ -352,14 +363,18 @@
 
     el.innerHTML = `<header class="page-hero pattern-waves">
         <div class="container">
-          <p class="page-hero__label">${nightLabel(event)} · ${upcoming ? "開催予定" : "記録"}</p>
+          <p class="page-hero__label">${actLabel(event)} · ${upcoming ? "開催予定" : "記録"}</p>
           <h1 class="page-hero__title">${esc(event.title)}</h1>
           <p class="page-hero__sub">${esc(event.subtitle)}</p>
         </div>
       </header>
       <div class="container section">
         <div class="detail">
-          <div class="detail__poster">${poster(event, "poster--feature")}</div>
+          <div class="detail__poster">${
+            event.poster
+              ? `<a href="${esc(event.poster)}" target="_blank" rel="noopener" aria-label="포스터 원본 보기">${poster(event, "poster--feature")}</a>`
+              : poster(event, "poster--feature")
+          }</div>
           <div class="detail__body">
             ${infoList(event)}
             <p class="detail__desc">${esc(event.description)}</p>
@@ -411,10 +426,10 @@
     if (descEl) descEl.textContent = SITE.description;
     const contactEl = document.getElementById("about-contact");
     if (contactEl) {
-      contactEl.innerHTML = `<dl class="info-list">
+      contactEl.innerHTML = `<dl class="info-list contact-list">
         <div class="info-list__row"><dt>메일</dt><dd><a href="mailto:${esc(SITE.contact.email)}">${esc(SITE.contact.email)}</a></dd></div>
         ${SITE.contact.links
-          .map((l) => `<div class="info-list__row"><dt>${esc(l.label)}</dt><dd><a href="${esc(l.url)}" target="_blank" rel="noopener">바로가기</a></dd></div>`)
+          .map((l) => `<div class="info-list__row"><dt>${linkLabel(l)}</dt><dd><a href="${esc(l.url)}" target="_blank" rel="noopener">바로가기</a></dd></div>`)
           .join("")}
       </dl>`;
     }

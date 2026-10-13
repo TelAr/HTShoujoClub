@@ -8,7 +8,7 @@
     "contact": {
       "email": "airdef306@naver.com",
       "links": [
-        { "label": "X (Twitter)", "url": "https://x.com/HalfToho_Club" }
+        { "label": "X (Twitter)", "url": "https://x.com/HalfToho_Club", "icon": "x" }
       ]
     }
   },
@@ -26,14 +26,14 @@
       "venue": {
         "name": "H.Ai",
         "address": "서울 중구 을지로 146-1 5F",
-        "mapUrl": "https://map.naver.com/p/search/%EC%9D%84%EC%A7%80%EB%A1%9C%20146-1"
+        "mapUrl": "https://place.map.kakao.com/1247043498"
       },
       "ticket": {
         "price": "사전예매 15,000원 / 현장 20,000원",
         "url": null
       },
-      "poster": null,
-      "description": "그 때의 그 이야기, REVENGE가 시작됩니다! 반동소녀구락부의 3.5번째 이야기.",
+      "poster": "assets/img/3.5.jpg",
+      "description": "그 때의 그 이야기, REVENGE가 시작됩니다! 아쉬운 마음을 달래기 위한 반동소녀구락부의 또 다른 한 방을 준비했습니다.",
       "lineup": [
         { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
         { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
@@ -46,8 +46,7 @@
       ],
       "credits": [
         { "role": "Organizer", "people": [
-          { "name": "Airdefence", "x": "airdefencestand" },
-          { "name": "TeAr", "x": "ErTe57661689" }
+          { "name": "Airdefence", "x": "airdefencestand" }
         ] }
       ],
       "links": [
@@ -66,14 +65,14 @@
       "venue": {
         "name": "홍턴",
         "address": "서울 마포구 동교로 207 B1/B2",
-        "mapUrl": "https://map.naver.com/p/search/%ED%99%8D%ED%84%B4"
+        "mapUrl": "https://place.map.kakao.com/16994671"
       },
       "ticket": {
-        "price": "사전예매 27,000원 / 현장 32,000원",
+        "price": "사전예매 27,000원 / 현장 32,000원 · 성인 전용",
         "url": null
       },
-      "poster": null,
-      "description": "다시 돌아온 반동소녀구락부, 세 번째 이야기! 이번에는 조금 더 진하게 즐겨 볼까요? 주류 반입이 자유로운 행사로, 미성년자는 참여할 수 없는 성인 전용(ADULT ONLY) 행사로 진행되었습니다.",
+      "poster": "assets/img/3rd.jpg",
+      "description": "다시 돌아온 반동소녀구락부, 세 번째 이야기! 이번에는 조금 더 진하게 즐겨 볼까요?",
       "lineup": [
         { "role": "DJ", "name": "SANY-ON", "x": "sany_on_", "time": null, "note": null },
         { "role": "DJ", "name": "Buffshut", "x": null, "time": null, "note": null },
@@ -88,8 +87,7 @@
       ],
       "credits": [
         { "role": "Organizer", "people": [
-          { "name": "Airdefence", "x": "airdefencestand" },
-          { "name": "TeAr", "x": "ErTe57661689" }
+          { "name": "Airdefence", "x": "airdefencestand" }
         ] }
       ],
       "links": [
@@ -107,7 +105,7 @@
       "venue": {
         "name": "아로아로홀",
         "address": "서울 마포구 월드컵로 41-1 지하 1층",
-        "mapUrl": "https://map.naver.com/p/search/%EC%95%84%EB%A1%9C%EC%95%84%EB%A1%9C%ED%99%80"
+        "mapUrl": "https://place.map.kakao.com/890742184"
       },
       "ticket": {
         "price": "사전예매 30,000원 / 현장 35,000원 (현장에서 동방 굿즈 실물 인증 시 3,000원 할인)",
@@ -115,8 +113,8 @@
         "openAt": "2025-04-05T11:00",
         "closeAt": "2025-05-25T23:59"
       },
-      "poster": null,
-      "description": "다시 돌아온 반(이)동(방) DJ클럽 이벤트! 사전예매자는 함께 즐기고 싶은 곡을 신청할 수 있었고, 사전예매를 놓친 분들을 위해 동방 프로젝트 굿즈를 지참하면 현장 예매가를 할인해 주는 이벤트도 진행했습니다. 발권은 행사 종료 직전 마감되었습니다.",
+      "poster": "assets/img/2nd.jpg",
+      "description": "다시 돌아온 반(이)동(방) DJ클럽 이벤트! 한 번 더 화끈하게 즐기실 준비 되었나요? 사전예매 시 저렴한 가격은 물론, 함께 즐기고 싶은 곡을 신청할 수 있는 기회까지! 사전예매를 놓치신 분들을 위해 동방 프로젝트 굿즈 실물 인증 시 현장 예매 할인 혜택도 준비되어 있습니다.",
       "lineup": [
         { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
         { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
@@ -158,12 +156,15 @@
       "venue": {
         "name": "기타&노래터",
         "address": "용인시 수지구 문인로31번길 3-23 지하1층",
-        "mapUrl": "https://map.naver.com/p/search/%EA%B8%B0%ED%83%80%26%EB%85%B8%EB%9E%98%ED%84%B0"
+        "mapUrl": "https://map.kakao.com/?q=%EA%B2%BD%EA%B8%B0%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EC%88%98%EC%A7%80%EA%B5%AC%20%EB%AC%B8%EC%9D%B8%EB%A1%9C31%EB%B2%88%EA%B8%B8%203-23"
       },
       "ticket": null,
-      "poster": null,
-      "description": "동방 프로젝트 행사 '온 동네가 환상향(@OnDongHwan)'에서 진행한 가벼운 DJ 이벤트입니다.",
-      "lineup": [],
+      "poster": "assets/img/mini.jpg",
+      "description": "지역 행사 형식의 동방 프로젝트 온리전 '온 동네가 환상향(@OnDongHwan)'에서 가벼운 DJ 이벤트를 진행하게 되었습니다!",
+      "lineup": [
+        { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
+        { "role": "DJ", "name": "Meta", "x": "_meta_P", "time": null, "note": null }
+      ],
       "credits": [
         { "role": "Organizer", "people": [
           { "name": "Airdefence", "x": "airdefencestand" }
@@ -185,7 +186,7 @@
       "venue": {
         "name": "아로아로홀",
         "address": "서울 마포구 월드컵로 41-1 지하 1층",
-        "mapUrl": "https://map.naver.com/p/search/%EC%95%84%EB%A1%9C%EC%95%84%EB%A1%9C%ED%99%80"
+        "mapUrl": "https://place.map.kakao.com/890742184"
       },
       "ticket": {
         "price": "사전예매 22,000원 / 현장 25,000원",
@@ -193,20 +194,20 @@
         "openAt": "2024-06-22T19:00",
         "closeAt": "2024-07-22T21:00"
       },
-      "poster": null,
-      "description": "전체 곡의 50% 이상이 동방 음악인 DJ 클럽 이벤트, 반동소녀구락부의 첫 번째 밤. 아니쿠라 여름방학 스탬프 이벤트에도 참여했으며, 모든 순서가 사고 없이 마무리되었습니다.",
+      "poster": "assets/img/1st.jpg",
+      "description": "전체 곡의 50% 이상이 동방 음악인 DJ클럽 이벤트! 반동소녀구락부의 첫 번째 막이 오릅니다. 아니쿠라 여름방학 이벤트에도 함께 참여합니다!",
       "lineup": [
         { "role": "DVJ", "name": "K.Y.N.G", "x": "SORYU_KOYANAGI", "time": null, "note": "원격 진행" },
         { "role": "DJ", "name": "A. Ki", "x": "AKi_Sound", "time": null, "note": null },
         { "role": "DJ", "name": "Rabbit House", "x": "ri_neb", "time": null, "note": null },
         { "role": "DJ", "name": "PiEa", "x": "Earbreaker_SC", "time": null, "note": null },
-        { "role": "DJ", "name": "적발추", "x": "Red_Villon", "time": null, "note": null },
-        { "role": "DJ", "name": "SANY_ON", "x": "sany_on_", "time": null, "note": null },
+        { "role": "DJ", "name": "Red_Villon", "x": "Red_Villon", "time": null, "note": null },
+        { "role": "DJ", "name": "SANY-ON", "x": "sany_on_", "time": null, "note": null },
         { "role": "DJ", "name": "MSPR", "x": "Mush_party_room", "time": null, "note": null },
         { "role": "DJ", "name": "Hayu", "x": "Hayu_0606", "time": null, "note": null },
         { "role": "VJ", "name": "단풍경", "x": "DPK0314", "time": null, "note": null },
         { "role": "VJ", "name": "Himin", "x": "hikawa_mint", "time": null, "note": null },
-        { "role": "VJ", "name": "Tsuru", "x": "mentsuru_", "time": null, "note": null }
+        { "role": "VJ", "name": "TSURU", "x": "mentsuru_", "time": null, "note": null }
       ],
       "credits": [
         { "role": "Organizer", "people": [
@@ -215,7 +216,7 @@
         ] },
         { "role": "Photo", "people": [{ "name": "DigginGoose", "x": "HuxRack" }] },
         { "role": "Design", "people": [{ "name": "K.Y.N.G", "x": "SORYU_KOYANAGI" }] },
-        { "role": "Illust", "people": [{ "name": "@recare1125", "x": "recare1125" }] }
+        { "role": "Illust", "people": [{ "name": "Recare", "x": "recare1125" }] }
       ],
       "links": [
         { "label": "행사 공지", "url": "https://x.com/HalfToho_Club/status/1789581621601177679" },
