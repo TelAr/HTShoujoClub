@@ -18,7 +18,8 @@ VS Code의 Live Server 확장을 써도 됩니다.
 ## 구조
 
 ```
-index.html      홈 — 히어로, 진행(예정) 행사, 지난 행사 미리보기
+index.html      홈 — 히어로, 진행(예정) 행사, 공지사항·지난 행사 미리보기
+notice.html     공지사항 — 공지 목록 (펼쳐서 보기)
 archive.html    아카이브 — 전체 행사 목록, 연도 필터
 event.html      행사 상세 — event.html?id=vol-03 형태로 접근
 about.html      소개 / 연락처
@@ -28,6 +29,20 @@ assets/
   js/main.js    헤더/푸터 삽입 및 페이지 렌더링
   img/          이미지 리소스 (포스터, 사진 등)
 ```
+
+## 공지 추가
+
+`assets/data/data.json`의 `notices` 배열에 항목을 추가합니다. 고정(`pinned: true`) 공지가 먼저, 그다음 최신순으로 표시됩니다.
+
+| 필드 | 설명 |
+|---|---|
+| `id` | 고유 ID. `notice.html#notice-<id>`로 해당 공지를 바로 펼쳐서 열 수 있음 |
+| `date` | `YYYY-MM-DD` |
+| `title` | 제목 |
+| `pinned` | `true`면 상단 고정 + 「중요」 표시 |
+| `body` | 본문. `\n`으로 줄바꿈 |
+| `images` | `[{ src, alt }]` 첨부 이미지 (본문 아래 표시, 누르면 원본) |
+| `links` | `[{ label, url }]` 관련 링크 |
 
 ## 행사 추가
 

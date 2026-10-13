@@ -14,6 +14,7 @@
   const NAV = [
     { page: "home", label: "홈", href: "index.html" },
     { page: "current", label: "진행 행사", href: "index.html#current" },
+    { page: "notice", label: "공지사항", href: "notice.html" },
     { page: "archive", label: "아카이브", href: "archive.html" },
     { page: "about", label: "소개", href: "about.html" },
   ];
@@ -58,6 +59,13 @@
     return sortedEvents().filter(isUpcoming).pop() || null;
   }
 
+  // 공지: 고정(pinned) 먼저, 그다음 최신순
+  function sortedNotices() {
+    return [...(DATA.notices || [])].sort(
+      (a, b) => (b.pinned === true) - (a.pinned === true) || parseDate(b.date) - parseDate(a.date)
+    );
+  }
+
   function pastEvents() {
     return sortedEvents().filter((e) => !isUpcoming(e));
   }
@@ -71,8 +79,21 @@
     return event.vol != null ? `Vol.${event.vol}` : "mini";
   }
 
+  // 한자 라벨에 한글 독음을 루비(윗첨자)로 병기. 글자 수가 같으면 글자별로 대응
+  function ruby(text, reading) {
+    const t = [...text];
+    const r = [...reading];
+    if (t.length !== r.length) return `<ruby>${esc(text)}<rt>${esc(reading)}</rt></ruby>`;
+    return `<ruby>${t.map((c, i) => `${esc(c)}<rt>${c === r[i] ? "" : esc(r[i])}</rt>`).join("")}</ruby>`;
+  }
+
   function actLabel(event) {
-    return event.vol != null ? `第${event.vol}幕` : "幕間";
+    return event.vol != null ? ruby(`第${event.vol}幕`, `제${event.vol}막`) : ruby("幕間", "막간");
+  }
+
+  // 아카이브 카드의 붉은 라벨용 한글 표기
+  function actLabelKo(event) {
+    return event.vol != null ? `제${esc(event.vol)}막` : "막간";
   }
 
   // 연락처 링크 아이콘 (data.json의 links[].icon 값)
@@ -106,7 +127,7 @@
       ? `<span class="badge badge--live">예정</span>`
       : `<span class="badge">종료</span>`;
     return `<a class="ofuda-card" href="event.html?id=${encodeURIComponent(event.id)}">
-      <span class="ofuda-card__strip" aria-hidden="true">${actLabel(event)}</span>
+      <span class="ofuda-card__strip" aria-hidden="true">${actLabelKo(event)}</span>
       <div class="ofuda-card__body">
         ${poster(event, "poster--card")}
         <div class="ofuda-card__meta">
@@ -301,6 +322,22 @@
         : `<p class="empty">현재 예정된 행사가 없습니다. 다음 소식을 기다려 주세요.</p>`;
     }
 
+    const noticeEl = document.getElementById("notice-preview");
+    if (noticeEl) {
+      const items = sortedNotices().slice(0, 3);
+      noticeEl.innerHTML = items.length
+        ? `<ul class="notice-preview">${items
+            .map(
+              (n) => `<li><a href="notice.html#notice-${encodeURIComponent(n.id)}">
+                <span class="notice-item__date">${formatDate(n.date)}</span>
+                ${n.pinned ? `<span class="badge badge--live">중요</span>` : ""}
+                <span class="notice-item__title">${esc(n.title)}</span>
+              </a></li>`
+            )
+            .join("")}</ul>`
+        : `<p class="empty">등록된 공지사항이 없습니다.</p>`;
+    }
+
     const archiveEl = document.getElementById("archive-preview");
     if (archiveEl) {
       const past = pastEvents().slice(0, 3);
@@ -363,7 +400,7 @@
 
     el.innerHTML = `<header class="page-hero pattern-waves">
         <div class="container">
-          <p class="page-hero__label">${actLabel(event)} · ${upcoming ? "開催予定" : "記録"}</p>
+          <p class="page-hero__label">${actLabel(event)} · ${upcoming ? ruby("開催予定", "개최예정") : ruby("記録", "기록")}</p>
           <h1 class="page-hero__title">${esc(event.title)}</h1>
           <p class="page-hero__sub">${esc(event.subtitle)}</p>
         </div>
@@ -387,21 +424,21 @@
       </div>
       <section class="container section">
         <div class="section-head">
-          <span class="section-head__label">演目</span>
+          <span class="section-head__label">출연</span>
           <h2 class="section-head__title">${hasTimes ? "타임테이블" : "라인업"}</h2>
         </div>
         ${timetable(event)}
       </section>
       ${event.credits && event.credits.length ? `<section class="container section">
         <div class="section-head">
-          <span class="section-head__label">裏方</span>
+          <span class="section-head__label">운영</span>
           <h2 class="section-head__title">스태프</h2>
         </div>
         ${credits(event)}
       </section>` : ""}
       <section class="container section">
         <div class="section-head">
-          <span class="section-head__label">記録</span>
+          <span class="section-head__label">기록</span>
           <h2 class="section-head__title">갤러리</h2>
         </div>
         <div class="gallery">
@@ -411,7 +448,7 @@
       </section>
       ${event.links && event.links.length ? `<section class="container section">
         <div class="section-head">
-          <span class="section-head__label">告知</span>
+          <span class="section-head__label">관련</span>
           <h2 class="section-head__title">관련 게시글</h2>
         </div>
         ${relatedLinks(event)}
@@ -419,6 +456,44 @@
       <div class="container section" style="padding-top:0">
         <a class="btn" href="archive.html">← 아카이브 목록</a>
       </div>`;
+  }
+
+  function renderNotice() {
+    const el = document.getElementById("notice-list");
+    if (!el) return;
+    const items = sortedNotices();
+    if (!items.length) {
+      el.innerHTML = `<p class="empty">등록된 공지사항이 없습니다.</p>`;
+      return;
+    }
+    // notice.html#notice-<id> 로 들어오면 해당 공지를 펼침, 아니면 최상단 공지를 펼침
+    const target = decodeURIComponent(location.hash.replace(/^#notice-/, ""));
+    el.innerHTML = items
+      .map((n, i) => {
+        const open = target ? n.id === target : i === 0;
+        const body = String(n.body || "")
+          .split("\n")
+          .map((line) => `<p>${esc(line)}</p>`)
+          .join("");
+        const images = (n.images || []).length
+          ? `<div class="notice-item__images">${n.images
+              .map((img) => `<a href="${esc(img.src)}" target="_blank" rel="noopener"><img src="${esc(img.src)}" alt="${esc(img.alt || n.title)}" loading="lazy"></a>`)
+              .join("")}</div>`
+          : "";
+        const links = (n.links || []).length
+          ? `<ul class="link-list">${n.links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a></li>`).join("")}</ul>`
+          : "";
+        return `<details class="notice-item" id="notice-${esc(n.id)}"${open ? " open" : ""}>
+          <summary>
+            <span class="notice-item__date">${formatDate(n.date)}</span>
+            ${n.pinned ? `<span class="badge badge--live">중요</span>` : ""}
+            <span class="notice-item__title">${esc(n.title)}</span>
+          </summary>
+          <div class="notice-item__body">${body}${images}${links}</div>
+        </details>`;
+      })
+      .join("");
+    if (target) document.getElementById(`notice-${target}`)?.scrollIntoView();
   }
 
   function renderAbout() {
@@ -460,7 +535,7 @@
     }
     renderHeader(page);
     renderFooter();
-    ({ home: renderHome, archive: renderArchive, event: renderEvent, about: renderAbout })[page]?.();
+    ({ home: renderHome, notice: renderNotice, archive: renderArchive, event: renderEvent, about: renderAbout })[page]?.();
   }
 
   init();

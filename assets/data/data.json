@@ -3,7 +3,7 @@
     "name": "반동소녀구락부",
     "nameJa": "返東少女倶楽部",
     "nameEn": "Half-Touhou Club",
-    "tagline": "절반 이상이 동방곡! 동방 중심의 애니송클럽 이벤트",
+    "tagline": "절반 이상이 동방곡! 동방 중심의 DJ 이벤트",
     "description": "반동소녀구락부(Half-Touhou Club)는 전체 곡의 50% 이상을 동방 프로젝트 음악으로 채우는 DJ 클럽 이벤트입니다. '반(이) 동(방)'이라는 이름처럼, 동방 어레인지를 중심으로 다양한 음악들을 함께 즐기는 자리를 만들고 있습니다.",
     "contact": {
       "email": "airdef306@naver.com",
@@ -12,6 +12,22 @@
       ]
     }
   },
+
+  "notices": [
+    {
+      "id": "2025-07-joint-statement",
+      "date": "2025-07-02",
+      "title": "안전하고 지속 가능한 서브컬처 음악 씬을 위한 이벤트 주최/공연장 공동 성명문",
+      "pinned": false,
+      "body": "안전하고 지속 가능한 서브컬처 음악 씬을 위한 이벤트 주최/공연장 공동 성명문에 반동소녀구락부가 함께했습니다.\n자세한 내용은 아래 게시글에서 확인해 주세요.",
+      "images": [
+        { "src": "assets/img/notice-2025-07-joint-statement.jpg", "alt": "안전하고 지속 가능한 서브컬처 음악 씬을 위한 이벤트 주최/공연장 공동 성명문 (2025년 7월 2일)" }
+      ],
+      "links": [
+        { "label": "공동 성명문 게시글", "url": "https://x.com/HalfToho_Club/status/1940410616453435657" }
+      ]
+    }
+  ],
 
   "events": [
     {
