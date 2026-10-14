@@ -112,9 +112,22 @@
     return `<a href="https://x.com/${encodeURIComponent(handle)}" target="_blank" rel="noopener">${esc(text)}</a>`;
   }
 
+  // 원본 경로 → tools/make-webp.py 로 만든 WebP 축소본 경로 (예: 3rd.jpg → 3rd-640.webp)
+  function resized(src, width) {
+    return String(src).replace(/\.(jpe?g|png)$/i, `-${width}.webp`);
+  }
+
+  // 축소본 <img>. 축소본이 없으면(변환 도구 미실행 등) 원본으로 자동 대체
+  function resizedImg(src, width, attrs) {
+    const fallback = esc(src).replace(/'/g, "%27");
+    return `<img ${attrs} src="${esc(resized(src, width))}" onerror="this.onerror=null;this.src='${fallback}'" loading="lazy">`;
+  }
+
+  // 카드(목록)는 640px, 상세·진행 행사는 840px 축소본 사용. 원본은 「원본 보기」 링크에서만
   function poster(event, extraClass = "") {
     if (event.poster) {
-      return `<img class="poster ${extraClass}" src="${esc(event.poster)}" alt="${esc(event.title)} 포스터" loading="lazy">`;
+      const width = extraClass.includes("poster--card") ? 640 : 840;
+      return resizedImg(event.poster, width, `class="poster ${extraClass}" alt="${esc(event.title)} 포스터"`);
     }
     return `<div class="poster poster--empty ${extraClass}" role="img" aria-label="포스터 준비 중">
       <span class="poster__vol">${esc(volLabel(event))}</span>
@@ -477,7 +490,7 @@
           .join("");
         const images = (n.images || []).length
           ? `<div class="notice-item__images">${n.images
-              .map((img) => `<a href="${esc(img.src)}" target="_blank" rel="noopener"><img src="${esc(img.src)}" alt="${esc(img.alt || n.title)}" loading="lazy"></a>`)
+              .map((img) => `<a href="${esc(img.src)}" target="_blank" rel="noopener" aria-label="이미지 원본 보기">${resizedImg(img.src, 840, `alt="${esc(img.alt || n.title)}"`)}</a>`)
               .join("")}</div>`
           : "";
         const links = (n.links || []).length

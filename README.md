@@ -44,6 +44,20 @@ assets/
 | `images` | `[{ src, alt }]` 첨부 이미지 (본문 아래 표시, 누르면 원본) |
 | `links` | `[{ label, url }]` 관련 링크 |
 
+## 이미지 추가 (WebP 축소본)
+
+포스터·공지 이미지는 원본을 `assets/img/`에 넣은 뒤 아래 도구를 한 번 실행합니다.
+
+```
+python tools/make-webp.py          # 새로 추가·변경된 이미지만 변환
+python tools/make-webp.py --force  # 전부 다시 생성
+```
+
+- 원본마다 `<이름>-640.webp`(목록 카드용)와 `<이름>-840.webp`(상세·공지 본문용)가 생성됩니다.
+- `data.json`에는 **원본 경로**만 적으면 되고, 화면에서는 자동으로 축소본을 사용합니다. 원본은 「원본 보기」에서만 열립니다.
+- 축소본이 없으면 원본으로 자동 대체되므로 표시가 깨지지는 않습니다(전송량만 늘어남).
+- 필요: Pillow (`python -m pip install --user pillow`)
+
 ## 행사 추가
 
 `assets/data/data.json`의 `events` 배열에 항목을 추가합니다. (JSON이므로 마지막 항목 뒤 쉼표, 주석은 허용되지 않습니다.)
